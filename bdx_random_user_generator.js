@@ -87,14 +87,23 @@
 
   function displayUser(userInfo) {
     // work-in-progress
-    document.getElementById('fullName').textContent = userInfo.name.first;
-    // document.getElementById('').textContent = response.results[0].;
-    // document.getElementById('').textContent = response.results[0].;
-    // document.getElementById('').textContent = response.results[0].;
-    // document.getElementById('').textContent = response.results[0].;
-    // document.getElementById('').textContent = response.results[0].;
-    // document.getElementById('').textContent = response.results[0].;
+    document.getElementById('fullName').textContent = userInfo.name.first + " " + userInfo.name.last;
+    document.getElementById('userName').textContent = userInfo.login.username;
+    document.getElementById('nationality').textContent = userInfo.nat;
+    document.getElementById('location').textContent = userInfo.location.city + ", " + userInfo.location.state;
+    document.getElementById('gender').textContent = userInfo.gender;
+    document.getElementById('age').textContent = age(userInfo.dob);
+
+    // document.getElementById('').textContent = userInfo.;
   }
 
+
+  function age(dob) {
+    var past = new Date(dob.split(' ')[0].replace(/\-+/g, '/'));
+    var diff_ms = Date.now() - past.getTime();
+    var age_dt = new Date(diff_ms);
+
+    return Math.abs(age_dt.getUTCFullYear() - 1970);
+  }
 
 })();
