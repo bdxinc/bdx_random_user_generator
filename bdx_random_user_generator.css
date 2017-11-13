@@ -3,6 +3,8 @@
   align-items: center;
   flex-direction: column;
   border: 2px solid black;
+  font-family: sans-serif;
+  color: black;
 }
 
 .buttons {
@@ -11,8 +13,40 @@
   border: 2px solid black;
 }
 
+.gANDa {
+  display: flex;
+
+}
+
+.gender::after {
+  /*display: none;*/
+  content: ",\00a0";
+}
+
+h1, h3 {
+  color: #418841;
+}
+
 img {
   height: 73px;
   width: 73px;
   margin-top: 12px;
+}
+
+.fullName {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.userName {
+  font-style: italic;
+  font-size: 1.2em;
+  color: #5769b1;
+}
+
+.location {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 1em;
+  color: gray;
 }

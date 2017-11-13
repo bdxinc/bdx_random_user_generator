@@ -1,5 +1,7 @@
 (function() {
 
+  xhrRequest();
+
   function handleClick(event) {
     if (event.target !== event.currentTarget && event.target.nodeName === "BUTTON") {
       console.log(event.target.name);
