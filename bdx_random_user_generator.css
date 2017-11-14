@@ -13,15 +13,16 @@
   border: 2px solid black;
 }
 
-.gANDa {
+.gANDa, .nANDl {
   display: flex;
 
 }
 
-.gender::after {
+.gender::after, #nationality::after {
   /*display: none;*/
-  content: ",\00a0";
+  content: ",";
 }
+
 
 h1, h3 {
   color: #418841;
@@ -49,4 +50,9 @@ img {
   font-style: italic;
   font-size: 1em;
   color: gray;
+  margin-left: .4em;
+}
+
+.age {
+margin-left: .4em;
 }
