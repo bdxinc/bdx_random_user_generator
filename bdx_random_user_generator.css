@@ -17,7 +17,6 @@
   border-top-left-radius: 2em;
   border-color: #418841;
   background-color: #418841;
-
 }
 
 .runtime {
@@ -48,6 +47,10 @@ img {
   height: 73px;
   width: 73px;
   margin-top: 12px;
+}
+
+#pic {
+  margin-bottom: .4em;
 }
 
 .fullName {

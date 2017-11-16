@@ -102,14 +102,13 @@
 
   function displayUser(userInfo) {
     // work-in-progress
+    document.getElementById('pic').src = userInfo.picture.large;
     document.getElementById('fullName').textContent = userInfo.name.first + " " + userInfo.name.last;
     document.getElementById('userName').textContent = userInfo.login.username;
-    // document.getElementById('nationality').textContent = userInfo.nat;
+    document.getElementById('nationality').className = "flag-icon flag-icon-" + userInfo.nat.toLowerCase();
     document.getElementById('location').textContent = userInfo.location.city + ", " + userInfo.location.state;
     document.getElementById('gender').textContent = userInfo.gender;
     document.getElementById('age').textContent = age(userInfo.dob);
-
-    document.getElementById('nationality').className = "flag-icon flag-icon-" + userInfo.nat.toLowerCase();
   }
 
 
