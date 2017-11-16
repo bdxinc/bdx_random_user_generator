@@ -50,10 +50,6 @@ img {
   margin-top: 12px;
 }
 
-.user {
-
-}
-
 .fullName {
   font-weight: bold;
   font-size: 1.5em;
@@ -74,8 +70,13 @@ img {
   margin-left: .4em;
 }
 
+.gender {
+  font-weight: bold;
+}
+
 .age {
 margin-left: .4em;
+font-weight: bold;
 }
 
 #xhr, #fetch, #axios, #jQuery {

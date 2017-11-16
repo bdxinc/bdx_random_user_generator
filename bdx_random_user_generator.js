@@ -1,8 +1,5 @@
 (function() {
 
-  // var loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
-  // console.log(loadTime);
-
   xhrRequest();
 
   function handleClick(event) {
@@ -36,6 +33,7 @@
 
 
   function xhrRequest() {
+    var start = Date.now();
     var httpRequest = new XMLHttpRequest();
     console.log(httpRequest);
     if (!httpRequest) {
@@ -53,6 +51,8 @@
 
             displayUser(response.results[0]);
 
+            document.getElementById('runtime').textContent = "Page load took " + (Date.now() - start)/1000.0 + " seconds";
+
           } else {
             console.log('There was a problem with the request.');
           }
@@ -67,25 +67,35 @@
   }
 
   function fetchRequest() {
+    var start = Date.now();
     fetch('https://randomuser.me/api').then(function(response) {
       return response.json();
     }).then(function(myJSON) {
       console.log(myJSON.results[0]);
       displayUser(myJSON.results[0]);
+
+      document.getElementById('runtime').textContent = "Page load took " + (Date.now() - start)/1000.0 + " seconds";
+
     })
   }
 
   function axiosRequest() {
+    var start = Date.now();
     axios.get('https://randomuser.me/api').then(function(response) {
       console.log(response.data.results[0]);
       displayUser(response.data.results[0]);
+
+      document.getElementById('runtime').textContent = "Page load took " + (Date.now() - start)/1000.0 + " seconds";
     });
   }
 
   function jQueryRequest() {
+    var start = Date.now();
     $.get('https://randomuser.me/api', function(data) {
       console.log(data.results[0]);
       displayUser(data.results[0]);
+
+      document.getElementById('runtime').textContent = "Page load took " + (Date.now() - start)/1000.0 + " seconds";
     });
   }
 
@@ -110,5 +120,16 @@
 
     return Math.abs(age_dt.getUTCFullYear() - 1970);
   }
+
+
+  // var eL = document.getElementById("buttons");
+  // eL.addEventListener("click", fade, true);
+
+  // SUN 24 March 2017
+
+  // var ms = 298999;
+  // ms = 1000*Math.round(ms/1000); // round to nearest second
+  // var d = new Date(ms);
+  // console.log( d.getUTCMinutes() + ':' + d.getUTCSeconds() );
 
 })();
