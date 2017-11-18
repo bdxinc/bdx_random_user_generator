@@ -33,6 +33,7 @@
 
 
   function xhrRequest() {
+    document.getElementById('animateData').classList.remove("animateData");
     var start = Date.now();
     var httpRequest = new XMLHttpRequest();
     console.log(httpRequest);
@@ -52,6 +53,7 @@
             displayUser(response.results[0]);
 
             document.getElementById('runtime').textContent = "Page load took " + (Date.now() - start)/1000.0 + " seconds";
+            document.getElementById('animateData').classList.add("animateData");
 
           } else {
             console.log('There was a problem with the request.');
@@ -67,6 +69,7 @@
   }
 
   function fetchRequest() {
+    document.getElementById('animateData').classList.remove("animateData");
     var start = Date.now();
     fetch('https://randomuser.me/api').then(function(response) {
       return response.json();
@@ -74,28 +77,35 @@
       console.log(myJSON.results[0]);
       displayUser(myJSON.results[0]);
 
+
       document.getElementById('runtime').textContent = "Page load took " + (Date.now() - start)/1000.0 + " seconds";
+      document.getElementById('animateData').classList.add("animateData");
 
     })
   }
 
   function axiosRequest() {
+    document.getElementById('animateData').classList.remove("animateData");
     var start = Date.now();
     axios.get('https://randomuser.me/api').then(function(response) {
       console.log(response.data.results[0]);
       displayUser(response.data.results[0]);
 
       document.getElementById('runtime').textContent = "Page load took " + (Date.now() - start)/1000.0 + " seconds";
+      document.getElementById('animateData').classList.add("animateData");
+
     });
   }
 
   function jQueryRequest() {
+    document.getElementById('animateData').classList.remove("animateData");
     var start = Date.now();
     $.get('https://randomuser.me/api', function(data) {
       console.log(data.results[0]);
       displayUser(data.results[0]);
 
       document.getElementById('runtime').textContent = "Page load took " + (Date.now() - start)/1000.0 + " seconds";
+      document.getElementById('animateData').classList.add("animateData");
     });
   }
 
